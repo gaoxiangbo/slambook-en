@@ -72,21 +72,21 @@ Buku ini diperuntukkan bagi mahasiswa dan peneliti yang tertarik dengan SLAM. Me
 
 * **Linux Basics.** Lingkungan pengembangan kita adalah Linux dan bukan Windows, dan kita hanya akan menyediakan source code untuk Linux. ** Kami percaya bahwa menguasai Linux adalah keterampilan penting bagi peneliti SLAM, dan mohon dimulainya. Setelah membaca isi buku ini, kami yakin Anda akan setuju dengan kami. ** Di Linux, konfigurasi perpustakaan terkait sangat mudah, dan Anda akan secara bertahap menghargai manfaat penguasaannya. Jika Anda tidak pernah menggunakan sistem Linux, akan sangat bermanfaat jika Anda dapat menemukan beberapa materi pembelajaran Linux dan meluangkan waktu untuk membacanya (untuk menguasai dasar-dasar Linux, beberapa bab pertama dari sebuah buku pengantar harus cukup memadai). Kami tidak meminta pembaca untuk memiliki kemampuan operasi Linux yang luar biasa, namun kami berharap pembaca setidaknya tahu cara menyalakan terminal, dan memasukkan direktori kode. Ada beberapa pertanyaan swauji di Linux di akhir bab ini. Jika Anda memiliki jawaban untuk mereka, Anda seharusnya tidak memiliki banyak masalah dalam memahami kode dalam buku ini.
 
-Readers who are interested in SLAM but do not have the above mentioned knowledge may find it difficult to proceed with this book. If you do not understand the basics of C++, you can read some introductory books such as _C ++ Primer Plus_. If you do not have the relevant math knowledge, we also suggest that you read some relevant math textbooks first. Nevertheless, we think that most readers who have completed undergraduate study should already have the necessary mathematical arsenal. Regarding the code, we recommend that you spend time typing them by yourself, and tweaking the parameters to see how they affect outputs. This will be very helpful.
+Pembaca yang tertarik dengan SLAM tetapi tidak memiliki hal di atas seperti pengetahuan yang disebutkan mungkin merasa sulit untuk melanjutkan buku ini. Jika Anda tidak memahami dasar-dasar C++, Anda dapat membaca beberapa buku pengantar seperti _C ++ Primer Plus_. Jika Anda tidak memiliki pengetahuan matematika yang relevan, kami juga menyarankan Anda membaca beberapa buku pelajaran matematika relevan pertama. Namun demikian, kita berpikir bahwa sebagian besar pembaca yang telah menyelesaikan sarjana harus sudah memiliki gudang matematika diperlukan. Mengenai kode, kami sarankan bahwa Anda menghabiskan waktu untuk mengetik kode itu sendiri, dan men-tweak parameter untuk melihat bagaimana mereka mempengaruhi output. Ini akan sangat membantu.
 
-This book can be used as a textbook for SLAM-related courses, but also suitable as extra-curricular self-study materials.
+Buku ini dapat digunakan sebagai buku teks untuk kursus SLAM, tetapi ini juga cocok sebagai bahan belajar-sendiri sebagai ekstra kurikuler.
 
-### Style
+### Gaya
 
-This book covers both mathematical theory and programming implementation. Therefore, for the convenience of reading, we will be using different layouts to distinguish different contents.
+Buku ini mencakup teori matematika dan pemrograman implementasi. Oleh karena itu, untuk kemudahan membaca, kita akan menggunakan layout yang berbeda untuk membedakan isi yang berbeda.
 
-1.  Mathematical formulas will be listed separately, and important formulas will be assigned with an equation number on the right end of the line, for example:
+1. Rumus matematika akan dicantumkan secara terpisah, dan rumus yang penting ini akan ditetapkan dengan nomor persamaan di ujung kanan baris, misalnya:
 
 	![](http://latex.codecogs.com/gif.latex?\\bm{y}=\\bm{A}\\bm{x})
 
-	Italics are used for scalars (e.g. ![](http://latex.codecogs.com/gif.latex?a)), bold italics are used for vectors and matrices (e.g. ![](http://latex.codecogs.com/gif.latex?\\bm{a}), ![](http://latex.codecogs.com/gif.latex?\\bm{A})). Hollow bold represents special sets, e.g. real number ![](http://latex.codecogs.com/gif.latex?\\mathbb{R}) and integer set ![](http://latex.codecogs.com/gif.latex?\\mathbb{Z}). Gothic is used for Lie Algebra, e.g. ![](http://latex.codecogs.com/gif.latex?\\mathfrak{se}(3)).
+	Huruf miring digunakan untuk skalar (misalnya ![](http://latex.codecogs.com/gif.latex?a)), huruf tebal dna miring digunakan untuk vektor dan matriks (misalnya ![](http://latex.codecogs.com/gif.latex?\\bm{a}), ![](http://latex.codecogs.com/gif.latex?\\bm{A})). Huruf tebal hollow mewakili set khusus, misalnya nomor asli ![](http://latex.codecogs.com/gif.latex?\\mathbb{R}) dan integer mengatur ![](http://latex.codecogs.com/gif.latex?\\mathbb{Z}). Gothic digunakan untuk Lie Algebra, misalnya ![](http://latex.codecogs.com/gif.latex?\\mathfrak{se}(3)).
 
-2.  Source code will be framed into boxes, using a smaller font size, with line numbers on the left. If a code block is long, the box may continue to the next page:
+2. Kode sumber akan dibingkai ke dalam kotak, menggunakan ukuran font yang lebih kecil, dengan nomor baris di sebelah kiri. Jika sebuah blok kode panjang, kotak dapat dilanjutkan ke halaman berikutnya:
 
 	```cpp
 	#include <iostream>
@@ -99,45 +99,45 @@ This book covers both mathematical theory and programming implementation. Theref
 	}
 	```
 
-3.  When the code block is too long or contains repeated parts with previously listed code, it is not appropriate to be listed entirely. We will **only give important snippets** and mark it with "Snippet". Therefore, we strongly recommend that readers download all the source code on GitHub and complete the exercises to better understand the book.
+3. Ketika blok kode terlalu panjang atau mengandung bagian-bagian yang berulang-ulang dengan kode yang terdaftar sebelumnya, hal ini tidak tepat untuk didaftarkan lagi sepenuhnya. Kami hanya **akan memberikan snippets penting** dan menandainya sebgai "Snippets". Oleh karena itu, kami sangat menyarankan kepada pembaca untuk mengunduh semua sumber kode GitHub dan menyelesaikan latihan agar Anda lebih memahami buku ini.
 
-4.  Due to typographical reasons, the code shown in the book may be slightly different from the code hosted on GitHub. In that case please use the code on GitHub.
+4. Alasan tipografi, kode yang ditunjukkan dalam buku mungkin sedikit berbeda dari kode host di GitHub. Dalam hal ini silakan gunakan kode pada GitHub.
 
-5.  For each of the libraries we use, it will be explained in details when first appearing, but not repeated in the follow-up. Therefore, it is recommended that readers read this book in order.
+5. Untuk masing-masing perpustakaan yang kami gunakan, itu akan dijelaskan secara rinci ketika pertama kali muncul, tetapi tidak diulang dalam tindak lanjut. Oleh karena itu, disarankan bahwa pembaca membaca buku ini secara berurutan.
 
-6.  An abstract will be presented at the beginning of each lecture. A summary and some exercises will be given at the end. The cited references are listed at the end of the book.
+6. Abstrak akan disajikan pada permulaan masing-masing kuliah. Ringkasan dan beberapa latihan akan diberikan pada akhir. Referensi tercantum di akhir buku.
 
-7.  The chapters with an asterisk mark in front are optional readings, and readers can read them according to their interest. Skipping them will not hinder the understanding of subsequent chapters.
+7. Bab dengan tanda asterisk di depan adalah bacaan opsional, dan pembaca dapat membaca sesuai dengan minat mereka. Melewatkannya tidak akan menghalangi pemahaman pada bab-bab berikutnya.
 
-8.  Important contents will be marked in **bold**, as we are accustomed to.
+8. Konten penting akan ditandai dengan **tebal**, karena kita sudah terbiasa.
 
-9.  Most of the experiments we designed are demonstrative. Understanding them does not mean that you are already familiar with the entire library. So we recommend that you spend time on yourselves in further exploring the important libraries frequently used in the book.
+9. Sebagian besar percobaan kami rancang secara demonstratif. Memahami mereka bukan berarti bahwa Anda sudah familiar dengan seluruh perpustakaan. Jadi kami sarankan Anda untuk menjelajahi lebih lanjut pada perpustakaan penting yang sering digunakan dalam buku.
 
-10. The book's exercises and optional readings may require you to search for additional materials, so you need to learn to use search engines.
+10. Buku latihan dan bacaan opsional mungkin mengharuskan Anda untuk mencari bahan tambahan, sehingga Anda perlu belajar untuk menggunakan mesin pencari.
 
-### Acknowledgments
+### Ucapan Terima kasih
 
-### Exercises (self-test questions)
+### Latihan (pertanyaan self-test)
 
-1. There is a linear equation ![](http://latex.codecogs.com/gif.latex?\\bm{A}\\bm{x}=\\bm{b}), if ![](http://latex.codecogs.com/gif.latex?\\bm{A}) and ![](http://latex.codecogs.com/gif.latex?\\bm{b}) are known, how to solve for ![](http://latex.codecogs.com/gif.latex?\\bm{x})? What are the requirements for ![](http://latex.codecogs.com/gif.latex?\\bm{A}) and ![](http://latex.codecogs.com/gif.latex?\\bm{b})? (Hint: the dimensionality and rank of ![](http://latex.codecogs.com/gif.latex?\\bm{A}))
+1. Ada persamaan linear ![](http://latex.codecogs.com/gif.latex?\\bm{A}\\bm{x}=\\bm{b}), jika ![](http://latex.codecogs.com/gif.latex?\\bm{A}) dan ![](http://latex.codecogs.com/gif.latex?\\bm{b}) diketahui, bagaimana memecahkan ![](http://latex.codecogs.com/gif.latex?\\bm{x})? Apa persyaratan untuk ![](http://latex.codecogs.com/gif.latex?\\bm{A}) dan ![](http://latex.codecogs.com/gif.latex?\\bm{b})? (Petunjuk: dimensi dan pangkat dari ![](http://latex.codecogs.com/gif.latex?\\bm{A}))
 
-2. What is a Gaussian distribution? What does it look like in one-dimensional case? How about in high-dimensional case?
+2. Apa itu distribusi Gaussian? Apa yang terlihat seperti dalam kasus dimensi? Bagaimana tentang kasus dimensi tinggi?
 
-3. Do you know what a **class** is in C++? Do you know STL? Have you ever used them?
+3. Apakah Anda tahu **class** dalam C++? Apakah Anda tahu STL? Apakah Anda pernah menggunakan mereka?
 
-4. How do you write a C++ program? (It's completely fine if your answer is "using Visual C++ 6.0". As long as you have C++ or C programming experience, you are in good hand)
+4. Bagaimana Anda menulis sebuah program C++? (Ini sangat baik jika jawaban Anda adalah "menggunakan Visual C++ 6.0". Karena selama Anda memiliki C++ atau C programming experience, Anda berada di posisi yang benar)
 
-5. Do you know the C++11 standard? Which new features have you heard of or used? Are you familiar with any other standard?
+5. Apakah Anda tahu C++11 standar? Yang baru memiliki fitur mendengar atau digunakan? Apakah Anda akrab dengan standar lain?
 
-6. Do you know Linux? Have you used at least one flavor (not including Android), such as Ubuntu?
+6. Apakah Anda tahu Linux? Apakah Anda menggunakan setidaknya satu jenis (tidak termasuk Android), seperti Ubuntu?
 
-7. What is the directory structure of Linux? What basic commands do you know? (e.g. ls, cat, etc.)
+7. Apa yang dimaksud dengan struktur direktori Linux? Perintah-perintah dasar apa yang Anda tahu? (misalnya ls, cat, dll.)
 
-8. How to install a software in Ubuntu (without using the Software Center)? What directories are software usually installed under? If you only know the fuzzy name of a software (for example, you want to install a library with a word "eigen" in its name), how would you do it?
+8. Bagaimana cara menginstal perangkat lunak di Ubuntu (tanpa menggunakan Software Center)? Dimana direktori perangkat lunak yang biasanya dipasang? Jika Anda hanya tahu nama lain dari perangkat lunak (misalnya, Anda ingin menginstal sebuah perpustakaan dengan kata "eigen" dalam namanya), bagaimana Anda akan melakukannya?
 
-9. *Spend an hour learning Vim, you will be using it sooner or later. You can enter "vimtutor" in an terminal and read through its contents. We do not require you to operate it very skillfully, as long as you can use it to edit the code in the process of learning this book. **Do not waste time on its plugins, do not try to turn Vim into an IDE for now, we will only use it for text editing.**
+9. *Akan menghabiskan satu jam belajar Vim, Anda akan menggunakannya cepat atau lambat. Anda dapat memasukkan "vimtutor" dalam terminal dan membaca isinya. Kami tidak mengharuskan Anda untuk beroperasi dengan sangat terampil, selama Anda dapat menggunakannya untuk mengedit kode dalam proses pembelajaran buku ini. **Jangan buang waktu mempelajari plugin, jangan coba untuk menjadi Vim IDE untuk sekarang, kita hanya akan menggunakannya untuk teks editing.**
 
-### References
+### Referensi
 
 - [Davison2007]. A. Davison, I. Reid, N. Molton, and O. Stasse, “Monoslam: Real-time single camera SLAM,” IEEETransactions on Pattern Analysis and Machine Intelligence, vol. 29, no. 6, pp. 1052–1067, 2007.
 - [Hartley2003]. R. Hartley and A. Zisserman, Multiple View Geometry in Computer Vision. Cambridge universitypress, 2003.
