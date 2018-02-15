@@ -1,27 +1,27 @@
-## First Glance of Visual SLAM
+## Kilas Pertama Visual SLAM
 
-### Goal of Study
+### Tujuan Studi
 
-1.  Understand what modules a visual SLAM framework consists of, and what task each module carries out.
-2.  Set up the programming environment, and prepare for development and experiments.
-3.  Understand how to compile and run a program under Linux. If there is a problem, how to debug it.
-4.  Master the basic use of cmake.
+1. Memahami apa kerangka modul visual SLAM, dan apa tugas masing-masing modul.
+2. Mengatur pemrograman environment, dan mempersiapkan diri untuk pengembangan dan percobaan.
+3. Memahami bagaimana untuk mengkompilasi dan menjalankan program di bawah Linux. Jika ada masalah, bagaimana cara men-debugnya.
+4. Menguasai dasar penggunaan cmake.
 
-### Lecture Introduction
+### Pengantar Kuliah
 
-This lecture summarizes the structure of a visual SLAM system as an outline of subsequent chapters. Practice part introduces the fundamentals of environment setup and program development. We will complete a "Hello SLAM" program at the end.
+Kuliah ini merangkum struktur sistem visual SLAM sebagai garis besar pada bab-bab berikutnya. Bagian praktek memperkenalkan dasar-dasar environment setup dan program pembangunan. Kami akan menyelesaikan program "Hello SLAM" pada bagian akhir nanti.
 
-### Meet "Little Carrot"
+### Menemui "Little Carrot"
 
-Suppose we assembled a robot called "Little Carrot", as shown in the following sketch:
+Misalkan kita merakit robot bernama "Little Carrot", seperti ditunjukkan pada sketsa berikut:
 
 ![carrot](/resources/whatIsSLAM/carrot.jpg)
 
-Although it looks a bit like the Android robot, it has nothing to do with the Android system. We put a laptop into its trunk (so that we can debug programs at any time). So, what is our robot capable to do?
+Meskipun terlihat mirip seperti robot Android, itu tidak ada hubungannya dengan sistem Android. Kami menempatkan laptop ke belalainya (sehingga kita dapat men-debug program setiap saat). Jadi, Apa yang mampu dilakukan robot?
 
-We hope Little Carrot has the ability of **moving autonomously**. Although there are "robots" placed statically on desktops, capable of chatting with people and playing music, a tablet computer nowadays can deliver the same tasks. As a robot, we hope Little Carrot can move freely in a room. No matter where we say hello, it can come right away.
+Kami berharap Little Carrot memiliki kemampuan **bergerak secara otonom**. Meskipun ada "robot" yang ditempatkan statis pada desktop, ia mampu melakukan chatting dengan orang-orang dan bermain musik, komputer tablet saat ini dapat memberikan tugas-tugas yang sama. Sebagai robot, semoga Little Carrot dapat bergerak dengan bebas di ruangan. Tidak peduli ketika kita mengatakan halo, ia akan segera datang.
 
-First of all, a robot needs wheels and motors to move, so we installed wheels under Little Carrot (gait control for humanoid robots is very complicated, which we will not be considering here). Now with the wheels, the robot is able to move, but without an effective control system, Little Carrot does not know where a target of action is, and it can do nothing but wander around blindly. Even worse, it may hit a wall and cause damage. In order to avoid this from happening, we installed cameras on its head, with the intuition that such a robot **should look similar to human** - we can tell that from the sketch. With eyes, brains and limbs, human can walk freely and explore any environment, so we (somehow naively) think that our robot should be able to achieve it too. In order to make Little Carrot able to explore a room, it needs to know at least two things:
+Pertama-tama, sebuah robot membutuhkan roda dan motor untuk bergerak, sehingga kita diinstal roda di bawah Little Carrot (gait kontrol untuk robot-robot humanoid sangat rumit, yang kita tidak akan mempertimbangkannya di sini). Sekarang dengan roda, robot dapat bergerak, tetapi tanpa sistem kontrol yang efektif, Little Carrot tidak tahu mana target manay yang melakukan tindakan, dan itu bisa melakukan apa-apa tapi berkeliaran membabi buta. Lebih buruk lagi, mungkin memukul dinding dan menyebabkan kerusakan. Untuk menghindari hal terjadi, kami memasang kamera di atas kepalanya, dengan intuisi bahwa robot **harus terlihat mirip manusia** - kita bisa melihatnya dari sketsa. Dengan mata, otak dan tungkai, manusia dapat berjalan bebas dan menjelajahi lingkungan apapun, jadi kami (mungkin naif) berpikir bahwa robot kami harus mampu mencapainya. Untuk membuat Little Carrot dapat menjelajahi ruang, dibutuhkan untuk mengetahui setidaknya dua hal:
 
 1. Where am I? - positioning
 2. what is the surrounding environment like? - map building
