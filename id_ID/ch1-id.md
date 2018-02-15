@@ -28,31 +28,31 @@ Dalam buku ini, kami akan memperkenalkan sejarah, teori, algoritma dan status pe
 
 Nah, cukup bicara, semoga perjalananmu menyenangkan!
 
-### How to use this book?
+### Bagaimana cara menggunakan buku ini?
 
-This book is entitled "14 Lectures on Visual SLAM". As the name suggests, we will organize the contents into "lectures" like we are learning in a classroom. Each lecture focuses on one specific topic,organized in a logical order. Each chapter will include both a theoretical part and a practical part, with the theoretical usually coming first. We will introduce the mathematics essential to understand the algorithms, and most of the time in a narrative way, rather than in a "definition, theorem, inference" approach adopted by most mathematical textbooks. We think this will be much easier to understand, but of course with a price of being less rigorous sometimes. In practical parts, we will provide code and discuss the meaning of the various parts, and demonstrate some experimental results. So, when you see chapters with the word "practice" in the title, you should turn on your computer and start to program with us, joyfully.
+Buku ini berjudul "14 Ceramah tentang Visual SLAM". Seperti namanya, kita akan mengatur isinya menjadi "kuliah" seperti kita belajar di kelas. Setiap ceramah berfokus pada satu topik tertentu, disusun secara logis. Setiap bab akan mencakup bagian teoretis dan bagian praktis, dengan teoritis biasanya datang lebih dulu. Kami akan memperkenalkan matematika yang penting untuk memahami algoritme, dan sebagian besar waktu dalam cara naratif, bukan dalam pendekatan "definisi, teorema, inferensi" yang diadopsi oleh sebagian besar buku teks matematika. Kami pikir ini akan lebih mudah dipahami, tapi tentu saja dengan harga yang kurang ketat kadang kala. Pada bagian praktis, kami akan memberikan kode dan mendiskusikan makna berbagai bagian, dan menunjukkan beberapa hasil eksperimen. Jadi, ketika Anda melihat bab dengan kata "latihan" dalam judul, Anda harus menyalakan komputer Anda dan mulai memprogram bersama kami, dengan gembira.
 
-The book can be divided into two parts: The first part will be mainly focused on the fundamental math knowledge, which contains:
+Buku ini dapat dibagi menjadi dua bagian: Bagian pertama terutama berfokus pada pengetahuan matematika dasar, yang berisi:
 
-1. Lecture 1: preface (the one you are reading now), introducing the contents and structure of the book.
-2. Lecture 2: an overview of a SLAM system. It describes each module of a SLAM system and explains what they do and how they do it. The practice section introduces basic C++ programming in Linux environment and the use of an IDE.
-3. Lecture 3: rigid body motion in 3D space. You will learn knowledge about rotation matrices, quaternions, Euler angles, and practice them with the Eigen library.
-4. Lecture 4: Lie group and Lie algebra. It doesn't matter if you have never heard of them. You will learn the basics of Lie group, and manipulate them with Sophus.
-5. Lecture 5: pinhole camera model and image expression in computer. You will use OpenCV to retrieve camera's intrinsic and extrinsic parameters, and then generate a point cloud using the depth information through PCL (Point Cloud Library). 
-6. Lecture 6: nonlinear optimization, including state estimation, least squares and gradient descent methods, e.g. Gauss-Newton and Levenburg-Marquardt. You will solve a curve fitting problem using the Ceres and g2o library.
+1. Kuliah 1: kata pengantar (yang sedang Anda baca sekarang), mengenalkan isi dan struktur buku ini.
+2. Kuliah 2: gambaran umum tentang sistem SLAM. Ini menggambarkan setiap modul sistem SLAM dan menjelaskan apa yang mereka lakukan dan bagaimana mereka melakukannya. Bagian latihan mengenalkan pemrograman C ++ dasar di lingkungan Linux dan penggunaan IDE.
+3. Kuliah 3: gerak tubuh kaku di ruang 3D. Anda akan belajar pengetahuan tentang matriks rotasi, quaternions, sudut Euler, dan mempraktikkannya dengan perpustakaan Eigen.
+4. Kuliah 4: Lie group dan Lie aljabar. Tidak masalah jika Anda belum pernah mendengarnya. Anda akan mempelajari dasar-dasar kelompok Lie, dan memanipulasinya dengan Sophus.
+5. Kuliah 5: model kamera lubang jarum dan ekspresi gambar di komputer. Anda akan menggunakan OpenCV untuk mengambil parameter intrinsik dan ekstrinsik kamera, dan kemudian menghasilkan titik awan dengan menggunakan informasi mendalam melalui PCL (Library Point Cloud).
+6. Kuliah 6: pengoptimalan nonlinier, termasuk estimasi negara, metode kuadrat dan gradien terkecil, mis. Gauss-Newton dan Levenburg-Marquardt. Anda akan menyelesaikan masalah pas kurva dengan menggunakan perpustakaan Ceres dan g2o.
 
-From lecture 7, we will be discussing SLAM algorithms, starting with Visual Odometry (VO) and followed by the map building problems: 
+Dari kuliah 7, kita akan membahas algoritma SLAM, dimulai dengan Visual Odometry (VO) dan diikuti oleh masalah pembuatan peta:
 
-7. Lecture 7: feature based visual odometry, which is currently the mainstream in VO. Contents include feature extraction and matching, epipolar geometry calculation, Perspective-n-Point (PnP) algorithm, Iterative Closest Point (ICP) algorithm, and Bundle Adjustment (BA), etc. You will run these algorithms either by calling OpenCV functions or by constructing you own optimization problem in Ceres and g2o.
-8. Lecture 8: direct (or intensity-based) method for VO. You will learn the principle of optical flow and direct method, and then use g2o to achieve a simple RGB-D direct method based VO (the optimization in most direct VO algorithms will be more complicated).
-9. Lecture 9: a practice chapter for VO. You will build a visual odometer framework by yourself by integrating the previously learned knowledge, and solve problems such as frame and map point management, key frame selection and optimization control.
-10. Lecture 10: back-end optimization. We will discuss Bundle Adjustment in detail, and show the relationship between its sparse structure and the corresponding graph model. You will use Ceres and g2o separately to solve a same BA problem.
-11. Lecture 11: pose graph in the back-end optimization. Pose graph is a more compact representation for BA which marginalizes all map points into constraints between keyframes. You will use g2o and gtsam to optimize a pose graph.
-12. Lecture 12: loop closure detection, mainly Bag-of-Word (BoW) based method. You will use dbow3 to train a dictionary from images and detect loops in videos. 
-13. Lecture 13: map building. We will discuss how to estimate the depth of feature points in monocular SLAM  (and show why they are unreliable). Compared with monocular depth estimation, building a dense map with RGB-D cameras is much easier. You will write programs for epipolar line search and patch matching to estimate depth from monocular images, and then build a point cloud map and octagonal tree map from RGB-D data.
-14. Lecture 14: current open source SLAM projects and future development direction. We believe that after reading the previous chapters, you will be able to understand other people's approaches easily, and be capable to achieve new ideas of your own.
+7. Kuliah 7: odometri visual berbasis fitur, yang saat ini menjadi mainstream di VO. Isi mencakup ekstraksi fitur dan pencocokan, perhitungan geometri epipolar, algoritma Perspective-n-Point (PnP), algoritma Iterative Closest Point (ICP), dan Bundle Adjustment (BA), dll. Anda akan menjalankan algoritma ini baik dengan memanggil fungsi OpenCV atau dengan membangun masalah optimasi Anda sendiri di Ceres dan g2o.
+8. Kuliah 8: metode langsung (atau intensitas berbasis) untuk VO. Anda akan mempelajari prinsip aliran optik dan metode langsung, dan kemudian menggunakan g2o untuk mencapai metode berbasis langsung RGB-D sederhana VO (optimasi di sebagian besar algoritma VO langsung akan lebih rumit).
+9. Kuliah 9: bab latihan untuk VO. Anda akan membangun kerangka odometer visual sendiri dengan mengintegrasikan pengetahuan yang telah dipelajari sebelumnya, dan memecahkan masalah seperti kerangka dan pengelolaan titik peta, pemilihan bingkai kunci dan kontrol pengoptimalan.
+10. Kuliah 10: optimasi back-end. Kita akan membahas Penyesuaian Bundle secara rinci, dan menunjukkan hubungan antara strukturnya yang jarang dan model grafik yang sesuai. Anda akan menggunakan Ceres dan g2o secara terpisah untuk memecahkan masalah BA yang sama.
+11. Kuliah 11: grafik pose dalam optimasi back-end. Pose graph adalah representasi yang lebih kompak untuk BA yang meminggirkan semua titik peta menjadi batasan antara keyframes. Anda akan menggunakan g2o dan gtsam untuk mengoptimalkan grafik pose.
+12. Ceramah 12: deteksi penutupan loop, terutama metode berbasis Bag-of-Word (BoW). Anda akan menggunakan dbow3 untuk melatih kamus dari gambar dan mendeteksi loop dalam video.
+13. Kuliah 13: pembuatan peta. Kami akan membahas bagaimana memperkirakan kedalaman titik fitur pada SLAM monokular (dan menunjukkan mengapa mereka tidak dapat diandalkan). Dibandingkan dengan perkiraan kedalaman monokuler, membangun peta padat dengan kamera RGB-D jauh lebih mudah. Anda akan menulis program pencarian garis epipolar dan pencocokan patch untuk memperkirakan kedalaman dari gambar monokuler, dan kemudian membangun peta titik awan dan peta pohon segi delapan dari data RGB-D.
+14. Kuliah 14: proyek open source SLAM saat ini dan arah pengembangan masa depan. Kami percaya bahwa setelah membaca bab-bab sebelumnya, Anda akan dapat memahami pendekatan orang lain dengan mudah, dan mampu mewujudkan gagasan baru Anda sendiri.
 
-Finally, if you don't understand what we are talking about at all, congratulations! This book is right for you! Come on and fight!
+Akhirnya, jika Anda tidak mengerti apa yang sedang kita bicarakan sama sekali, selamat! Buku ini tepat untuk Anda! Ayo dan melawan!
 
 ### Source code
 
