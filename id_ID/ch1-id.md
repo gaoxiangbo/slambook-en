@@ -107,16 +107,12 @@ Buku ini mencakup teori matematika dan pemrograman implementasi. Oleh karena itu
 
 6. Abstrak akan disajikan pada permulaan masing-masing kuliah. Ringkasan dan beberapa latihan akan diberikan pada akhir. Referensi tercantum di akhir buku.
 
-7.  The chapters with an asterisk mark in front are optional readings, and readers can read them according to their interest. Skipping them will not hinder the understanding of subsequent chapters.
 7. Bab dengan tanda asterisk di depan adalah bacaan opsional, dan pembaca dapat membaca sesuai dengan minat mereka. Melewatkannya tidak akan menghalangi pemahaman pada bab-bab berikutnya.
 
-8.  Important contents will be marked in **bold**, as we are accustomed to.
 8. Konten penting akan ditandai dengan **tebal**, karena kita sudah terbiasa.
 
-9.  Most of the experiments we designed are demonstrative. Understanding them does not mean that you are already familiar with the entire library. So we recommend that you spend time on yourselves in further exploring the important libraries frequently used in the book.
 9. Sebagian besar percobaan kami rancang secara demonstratif. Memahami mereka bukan berarti bahwa Anda sudah familiar dengan seluruh perpustakaan. Jadi kami sarankan Anda untuk menjelajahi lebih lanjut pada perpustakaan penting yang sering digunakan dalam buku.
 
-10. The book's exercises and optional readings may require you to search for additional materials, so you need to learn to use search engines.
 10. Buku latihan dan bacaan opsional mungkin mengharuskan Anda untuk mencari bahan tambahan, sehingga Anda perlu belajar untuk menggunakan mesin pencari.
 
 ### Ucapan Terima kasih
